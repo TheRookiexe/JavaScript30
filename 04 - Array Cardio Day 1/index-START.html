@@ -73,10 +73,16 @@
     // Sort the people alphabetically by last name
     const sortedByLastName= inventors.sort((a,b)=> a.last<b.last ? -1 : 1);
     console.table(sortedByLastName);
+
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
+    const sumOfInstances = data.reduce((obj, item)=>{
+      obj[item] = (obj[item] || 0)+1;
+      return obj;
+    }, {});
+    console.table(sumOfInstances);
+  
   </script>
 </body>
 </html>
